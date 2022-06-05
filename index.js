@@ -31,16 +31,3 @@ console.log(isBalanced('[{()}]'));
 console.log(isBalanced('[)}'));
 
         
-function isIsogram(str) {
-    let mass = {};
-    let char = str.toLowerCase();
-    while(char[i] != -1) {
-        if (char[i] > 1) {
-
-        }
-    }
-}
-
-console.log(isIsogram('abc'))
-console.log(isIsogram('abb'))
-console.log(isIsogram('abcifhi'))
