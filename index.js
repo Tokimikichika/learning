@@ -30,14 +30,17 @@
 // console.log(isBalanced('[{()}]'));
 // console.log(isBalanced('[)}'));
 
-class Steck {
+class Stack {
     constructor(el) {
         this.el = el;
         }
 }
-const steck = new Steck;
-let el = steck;
-el.push(10);
-el.push(20);
 
-el.pop(); //el === 20
+
+const stack = new Stack();
+
+stack.push(10);
+
+stack.push(20);
+
+const el = stack.pop() // el === 20
