@@ -31,9 +31,9 @@
 // console.log(isBalanced('[)}'));
 
 class Stack {
-    constructor(el) {
-        this.el = el;
-        }
+    constructor(initState = []) {
+        this.stack = initState;
+    }
 }
 
 
