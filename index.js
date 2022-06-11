@@ -34,6 +34,12 @@ class Stack {
     constructor(initState = []) {
         this.stack = initState;
     }
+    push() {
+        initState.push(stack);
+    }
+    pop() {
+        return initState.pop(stack);
+    }
 }
 
 
