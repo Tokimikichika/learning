@@ -40,6 +40,7 @@ class Stack {
     pop() {
         return initState.pop(stack);
     }
+    
 }
 
 
