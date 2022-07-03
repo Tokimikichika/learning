@@ -14,6 +14,7 @@ class Stack {
     }
     
 }
+const stack = new Stack();
 
 const isBalanced = str => {
     
@@ -23,7 +24,7 @@ const isBalanced = str => {
         if (brackets === openTokens) {
             stack.push(brackets);
         } else if (brackets === closeTokens) {
-            stack.pop(brackets);
+            stack.pop();
             
         }
         
@@ -37,7 +38,7 @@ console.log(isBalanced('[)}'));
 
 
 
-const stack = new Stack();
+
 
 stack.push(10);
 
