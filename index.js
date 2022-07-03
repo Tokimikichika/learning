@@ -1,49 +1,44 @@
-// const openTokens = ['(', '[', '{'];
+const openTokens = ['(', '[', '{'];
 
-// const closeTokens = [')', ']', '}'];
-
-// let stack = [];
-
-// const push = () => {
-//     stack.push();
-// }
-// const pop = () => {
-//     return stack.pop();
-// }
-
-// const isBalanced = str => {
-    
-
-//     for (let i = 0; i < str.length; i++) {
-//         let brackets = str[i];
-//         if (brackets === openTokens) {
-//             push(brackets);
-//         } else if (brackets === closeTokens) {
-//             pop(brackets);
-            
-//         }
-        
-//     }
-//         return !stack.length;
-//     }
-// console.log(isBalanced('()[]{}'));
-// console.log(isBalanced('[{()}]'));
-// console.log(isBalanced('[)}'));
+const closeTokens = [')', ']', '}'];
 
 class Stack {
     constructor(initState = []) {
         this.stack = initState;
     }
-    push() {
-        initState.push(stack);
+    push(el) {
+        this.stack.push(el);
     }
     pop() {
-        return initState.pop(stack);
+        return this.stack.pop();
     }
+    
 }
-
-
 const stack = new Stack();
+
+const isBalanced = str => {
+    
+
+    for (let i = 0; i < str.length; i++) {
+        let brackets = str[i];
+        if (brackets === openTokens) {
+            stack.push(brackets);
+        } else if (brackets === closeTokens) {
+            stack.pop();
+            
+        }
+        
+    }
+        return !stack.length;
+    }
+console.log(isBalanced('()[]{}'));
+console.log(isBalanced('[{()}]'));
+console.log(isBalanced('[)}'));
+
+
+
+
+
 
 stack.push(10);
 
