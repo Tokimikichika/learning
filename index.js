@@ -20,10 +20,10 @@ const isBalanced = str => {
     
 
     for (let i = 0; i < str.length; i++) {
-        let brackets = str[i];
-        if (brackets === openTokens) {
-            stack.push(brackets);
-        } else if (brackets === closeTokens) {
+        const bracket = str[i];
+        if (openTokens[bracket]) {
+            stack.push(bracket);
+        } else {
             stack.pop();
             
         }
