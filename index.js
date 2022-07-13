@@ -9,6 +9,7 @@ const closeTokens = {
     ']': false,
     '}': false,
 };
+let sPop = '';
 
 class Stack {
     constructor(initState = []) {
@@ -32,7 +33,10 @@ const isBalanced = str => {
         if (openTokens == bracket) {
             stack.push(bracket);
         } else {
-            stack.pop();
+            sPop = stack.pop();
+            if(bracket === closeTokens[sPop]){ 
+                return false;
+            }
             
         }
         
