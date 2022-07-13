@@ -1,6 +1,15 @@
-const openTokens = ['(', '[', '{'];
+const openTokens = {
+    '(': true,
+    '[': true,
+    '{': true,
+}
 
-const closeTokens = [')', ']', '}'];
+const closeTokens = {
+    ')': false,
+    ']': false,
+    '}': false,
+};
+let sPop = '';
 
 class Stack {
     constructor(initState = []) {
@@ -20,11 +29,14 @@ const isBalanced = str => {
     
 
     for (let i = 0; i < str.length; i++) {
-        let brackets = str[i];
-        if (brackets === openTokens) {
-            stack.push(brackets);
-        } else if (brackets === closeTokens) {
-            stack.pop();
+        const bracket = str[i];
+        if (openTokens == bracket) {
+            stack.push(bracket);
+        } else {
+            sPop = stack.pop();
+            if(bracket === closeTokens[sPop]){ 
+                return false;
+            }
             
         }
         
